@@ -20,7 +20,8 @@
    
             PAT: the personal access token to login to the registry
 11. git clone https://github.com/Alexander-94/ansible.git
-12. ansible-playbook -i hosts.txt docker_playbook.yml
+12. cd ansible
+13. ansible-playbook -i hosts.txt docker_playbook.yml
 
 For services port tuning, change docker-compose in service/service-name
 
