@@ -36,6 +36,11 @@
        name: docker-compose-plugin
        state: latest
 
+   - name: Install OpenJdk 21
+     apt:
+       name: openjdk-21-jre-headless
+       state: latest
+
    - name: Start Docker service
      service:
        name: docker
