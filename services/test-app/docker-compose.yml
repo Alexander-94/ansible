@@ -1,0 +1,6 @@
+services:
+  test-app:
+    container_name: test-app-service
+    image: ghcr.io/alexander-94/test-app:latest
+    ports:
+      - 8080:8080
