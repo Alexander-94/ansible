@@ -1,7 +1,8 @@
 # Ansible configs for Hetzner
 1. SSH Putty login
-2. apt install ansible-core
-3. apt install git
+2. sudo apt-get update
+3. apt install ansible-core
+4. apt install git
 5. Create an SSH key: ssh-keygen -t rsa -b 4096
 6. Copy the content of the key file: cat ~/.ssh/id_rsa
 7. Add the public key to the authorized_keys file: cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
