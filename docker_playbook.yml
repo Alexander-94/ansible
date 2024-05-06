@@ -1,30 +1,31 @@
 ---
- - name: Update apt-get repo and cache
-   apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
-
- - name: Install required system packages
-   apt:
-     pkg:
-       - ca-certificates
-       - curl
-       - gnupg
-     state: latest
-     update_cache: true
-
- - name: Add Docker GPG apt Key
-   apt_key:
-     url: https://download.docker.com/linux/ubuntu/gpg
-     state: latest
-
- - name: Add Docker Repository
-   apt_repository:
-     repo: deb https://download.docker.com/linux/ubuntu focal stable
-     state: latest
-
- - name: Install Docker
+ - name: Manage the Server
    hosts: master_server
    become: yes
    tasks:
+
+   - name: Update apt-get repo and cache
+     apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+
+   - name: Install required system packages
+     apt:
+       pkg:
+         - ca-certificates
+         - curl
+         - gnupg
+       state: latest
+       update_cache: true
+
+   - name: Add Docker GPG apt Key
+     apt_key:
+       url: https://download.docker.com/linux/ubuntu/gpg
+       state: latest
+
+   - name: Add Docker Repository
+     apt_repository:
+       repo: deb https://download.docker.com/linux/ubuntu focal stable
+       state: latest
+     
    - name: Install Docker
      apt:
        name: docker-ce
