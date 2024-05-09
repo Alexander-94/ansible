@@ -1,0 +1,6 @@
+services:
+  wshome-docs-protector:
+    container_name: wshome-docs-protector-service
+    image: ghcr.io/deniel980/wshome-docs-protector:latest
+    ports:
+      - 8081:8080
